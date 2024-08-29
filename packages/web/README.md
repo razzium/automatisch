@@ -2,6 +2,29 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# RAZZ DOC START
+
+### `run local DEV`
+- Update "/packages/backend/src/config/cors-options.js" => from 'origin: appConfig.webAppUrl,' to 'origin: "*",' (WARNING: do not push production!)
+- Go to packages/backend
+    - RUN "yarn"
+    - RUN yarn db:create
+    - RUN yarn db:migrate
+    - RUN db:seed:user
+    - RUN "yarn dev"
+- Go to packages/web
+    - RUN "yarn dev"
+- Go to http://localhost:3001/
+
+
+### `deploy project build`
+- Go to packages/web
+    - RUN "yarn build"
+- Go root folder (cd ..)
+    - RUN docker-compose up -d
+
+# RAZZ DOC END
+
 ## Available Scripts
 
 In the project directory, you can run:
